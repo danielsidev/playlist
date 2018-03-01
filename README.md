@@ -39,7 +39,7 @@ To load the correctly subtitle  put the subtitle with same name of the video in 
 
 In the root of project..  
 First excute:
-> sudo npm install
+> sudo npm install ( It is necessary to use sudo because NodeJS recompiles node-gyp )
 
 *This will make download from dependecies*
 ----------
