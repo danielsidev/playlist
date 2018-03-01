@@ -61,18 +61,15 @@ If you have problems with permission EACCES make this:
 
 
 To Generate Executable: to macos
-> ( on project root )
 >  npm run pack-osx ( will generate a executable for macos )
 ----------
 
 To Install: to linux (.deb)
-> ( on project root )
 > npm run pack-linux64 ( will request your password to a permission write )
 > npm run install-deb64 ( will allocate the package in home/$USER/playlist and will create a shortcut on program list and will open the app )
 ----------
 
 To Generate Executable: to windows
-> ( on project root )
 >  npm run pack-win64 ( no test for now - help me test )
 ----------
 
