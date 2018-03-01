@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Import Google Icon Font Local-->
+    <link type="text/css" rel="stylesheet" href="src/assets/css/iconfont/material-icons.css"  media="all"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="src/assets/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="src/assets/css/materialdesignicons.min.css" media="all"  />
+    <link rel="stylesheet" type="text/css" href="src/assets/css/app.css">
+    <title>Playlist</title>
+    </head>
+    <body>
+      <div id="preloader">
+        <img src="src/assets/images/load-playlist.svg" alt="Carregando..." title="Carregando..." /><br />
+        Carregando....
+       </div>
+    <div id="app">
+      <div id='media-player' class='media-player' >
+          <video id='mediaVideo'  poster="./src/assets/images/play-icon.png" controls autobuffer preload="auto">
+              <source src="" type='video/mp4; codecs="avc1.42E01E,mp4a.40.2"' />
+              <source src="" type='video/webm; codecs="vp8,vorbis"'>
+              <source src="" type='video/ogg; codecs="theora,vorbis"'>
+              <track id="subtitles" kind="subtitles" label="Legenda em Portugês" src="" srclang="pt" default></track>
+
+              <object data=""type="video/avi"></object>
+              <embed src="" type="video/mkv" />
+          </video>
+
+            <div id='mediaControls' class='' >
+              <span id='time' class="time-video-begin">00:00</span>
+              <progress id='progressBar'  min='0' max='100' value='0' >0% played</progress>
+              <span id='totalTime' class="time-video-end">00:00</span>
+
+              <button id='playPauseBtn'  class='play' title='play'><i class="material-icons icon-play-pause">play_arrow</i></button>
+              <button id='muteBtn'  class='mute' title='mute'  ><i class="material-icons icon-volume">volume_up</i></button>
+              <input type="range" id="barVolume"   title="volume" min="0" max="1" step="0.1" value="1"   onchange="MediaControls.changeVolumeBar()" />
+              <button class='btnfullScreen' id='fullscreenBtn' title='Tela Inteira'><i class="material-icons icon-fullscreen">fullscreen</i></button>
+              <span class='name-video'></span>
+              <button class='btnMenu' id='menuBtn'  title='Menu'><i class="material-icons">playlist_play</i></button>
+              <button class='btnChromecast' id='chromecastBtn' title='Chromecast'><i class="material-icons icon-cast">cast</i></button>
+            </div>
+
+            <div id='media-play-list' class='' >
+            <div class="titulo-playlist">Playlist <span class="btnFechar"><i class="material-icons">close</i></span></div>
+              <div  class='content-list'></div>
+
+
+              <div class="file-field input-field">
+                <div class="btn btn-file-online">
+                  <span> <i class="material-icons icon-add-video">cloud</i>Vídeos Online</span>
+                </div>
+             </div>
+                  <div class="file-field input-field">
+                    <div class="btn btn-file-local">
+                      <span> <i class="material-icons icon-add-video">video_library</i>Vídeos Locais</span>
+                      <input type="file" id="videosBtn"  multiple  />
+                    </div>
+                 </div>
+
+                 <!--<i class="material-icons">ondemand_video</i> -->
+
+
+      </div><!-- Fecha media player list -->
+    </div><!-- Fecha media player -->
+
+
+    <div  id="camadaChromecast" >
+    <h2>Reproduzindo no Chromecast</h2>
+    <div id='camadaChromecastStatus' ></div>
+    <div id="load-cast" class="progress"><div id="tipo-load-cast" class="indeterminate"></div></div>
+    <button id='playPauseBtnCast'  class='playCast' title='play' onclick="MediaChromecast.play()" ><i class="material-icons icon-play-cast">file_upload</i></button>
+    <button id='sairBtnCast'  class='sair' title='sair' onclick="MediaChromecast.stop()" ><span class="sair-cast">SAIR</span> <i class="material-icons icon-sair-cast">exit_to_app</i></button>
+
+    </div>
+    <div id="camadaConfirmaChromecast">
+      <input type="text" id="device" name="device" placeholder="Informe o nome do Chromecast aqui, caso possua mais de um." />
+      <br />
+      <span class="aviso-device">*Se possui 1 Chromecast, clique em Enviar Vídeo e selecionaremos ele automaticamente.</span>
+      <br />
+      <button type="button" id="enviarVideo">Enviar Vídeo</button>
+      <button type="button" id="enviarVideoCancelar">Cancelar</button>
+
+
+    </div>
+  </div><!-- Fecha app -->
+  <div  id="camadaPausePlay" class='camada-pause-play vjs-fade-out' onclick="MediaControls.playVideo()"><i class="material-icons icon-camada-play-pause">play_circle_outline</i></div>
+  <div  id="camadaVideoOnline" class='camada-video-online' >
+    <div id="btnFechar"><i class="material-icons">close</i></div><br />
+      <input type="text" name="videoOnline" id="videoOnline" value="" placeholder="Endereço do vídeo online (.mp4)"  />
+      <br />
+      <button type="button" id="carregarVideoOnline">Carregar Vídeo</button>
+  </div>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.Hammer = require('./src/assets/js/hammer.min.js');</script>
+    <script type="text/javascript" src="src/assets/js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="src/assets/js/materialize.js"></script>
+    <script src="./index.js"></script>
+
+  </body>
+</html>

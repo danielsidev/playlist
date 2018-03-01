@@ -1,0 +1,92 @@
+{
+  "name": "playlist",
+  "version": "1.0.0",
+  "description": "A software of video playback and share with the chromecast",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "test.js",
+    "pack": "electron-builder --dir",
+    "dist": "build",
+    "pack-win64": "electron-packager . Playlist --platform=win32 --arch=x64 --overwrite  --prune=true --icon=./src/assets/icons/ico/playlist.ico --version=1.0 yqx --ignore=node_modules/electron-* --out build/",
+    "pack-linux64": "electron-packager . Playlist --platform=linux --arch=x64  --overwrite   --icon=./src/assets/icons/png/playlist.png --version=1.0 yqx --ignore=node_modules/electron-* --out build/ && cp ./install-playlist.sh  ./build/Playlist-linux-x64/install-playlist.sh && sudo chmod -R 777 ./build && chmod +x ./build/Playlist-linux-x64/install-playlist.sh && exit ",
+    "pack-osx": "electron-packager . Playlist --platform=darwin --arch=x64 --overwrite --prune=true --icon=./src/assets/icons/icns/playlist.icns --version=1.0 yqx --ignore=node_modules/electron-*  --out build/ ",
+    "_comment": "cp ./build_resources/Icon.icns  Playlist.app/Contents/Resources/atom.icns ",
+    "buildall": "electron-packager . --all",
+    "build_native_modules": "export npm_config_target=1.7.10 && export npm_config_arch=x64 && export npm_config_disturl=https://atom.io/download/electron && export npm_config_runtime=electron && export npm_config_build_from_source=true && HOME=~/.electron-gyp npm install",
+    "permission": "sudo npm install -g electron --unsafe-perm=true --allow-root",
+    "build-linux": "electron-builder  build/Playlist-linux-64 --platform=linux  --config=builder.json",
+    "ubuntu-mdns": "sudo apt-get install avahi-daemon avahi-discover avahi-utils libnss-mdns mdns-scan",
+    "dependency-ubuntu": "sudo apt-get install libavahi-compat-libdnssd-dev",
+    "user": "echo $USER",
+    "install-deb64": "./build/Playlist-linux-x64/install-playlist.sh"
+  },
+  "build": {
+    "appId": "br.com.playlist",
+    "files": [
+      "build_resources/*",
+      "src/*/*",
+      "lib/*/*",
+      "./index.js",
+      "./index.html"
+    ],
+    "linux": {
+      "icon": "./build_resources/",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "directories": {
+      "buildResources": "./build_resources/"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielsidev/playlist.git"
+  },
+  "keywords": [
+    "playback",
+    "playlist",
+    "videos",
+    "chromecast"
+  ],
+  "author": "Daniel Mello Siqueira",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://github.com/danielsidev/playlist/blob/master/README.md",
+  "dependencies": {
+    "array-loop": "^1.0.0",
+    "array-shuffle": "^1.0.1",
+    "castv2-client": "^1.1.0",
+    "chalk": "1.0.0",
+    "chromecast-player": "^0.2.3",
+    "debounced-seeker": "^1.0.0",
+    "diveSync": "^0.3.0",
+    "fs": "0.0.1-security",
+    "got": "^1.2.2",
+    "hammerjs": "^2.0.8",
+    "internal-ip": "^1.0.0",
+    "jquery": "^3.1.1",
+    "mdns": "^2.3.4",
+    "mime": "^1.2.11",
+    "peerflix": "^0.34.0",
+    "query-string": "^1.0.0",
+    "range-parser": "^1.0.2",
+    "read-torrent": "^1.0.0",
+    "router": "^0.6.2",
+    "srt-to-vtt": "^1.1.1",
+    "srt2vtt": "^1.3.1",
+    "stream-transcoder": "0.0.5",
+    "util": "^0.10.3",
+    "xml2js": "^0.4.4",
+    "xspfr": "^0.3.1",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "electron-builder": "^19.50.0",
+    "electron-installer-debian": "^0.7.1",
+    "electron-packager": "^10.1.0",
+    "electron-prebuilt": "^1.4.13"
+  }
+}

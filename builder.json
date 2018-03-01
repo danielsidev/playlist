@@ -1,0 +1,13 @@
+{
+  "linux":{
+    "arch":64,
+    "target": [ "deb"],
+    "version":"1.0.0",
+    "title" : "Playlist",
+    "iconUrl":"http://127.0.0.1/playlist/playlist.ico",
+    "categories":"Video",
+    "executableName":"playlist"
+    "maintainer":"Daniel Siqueira <adeptodaniel@gmail.com>",
+    "lintianOverrides": ["changelog-file-missing-in-native-package"]
+  }
+}

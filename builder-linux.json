@@ -1,0 +1,11 @@
+{
+    "dest": "build/",
+    "version":"1.0.0",
+    "title" : "Playlist",
+    "icon":"resources/Icon.png",
+    "categories":["Video"],
+    "executable":"playlist",
+    "maintainer":"Daniel Siqueira <adeptodaniel@gmail.com>",
+    "lintianOverrides": ["changelog-file-missing-in-native-package"]
+
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Preload</title>
+    <style type="text/css">
+      html, body{
+        background:#333;
+      }
+
+      #preloader{
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        z-index: 2147483647;
+        left: 50%;
+        margin-left: -50px;
+        top: 25%;
+        color: #f5f204;
+        text-shadow: 0px 0px 7px #000;
+      }
+      #preloader img{
+        display: block;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    </head>
+    <body>
+      <div id="preloader">
+        <!--<img src="src/assets/images/load-playlist.svg" alt="Carregando..." title="Carregando..." /><br />-->
+        Carregando....
+       </div>
+    </body>
+</html>
