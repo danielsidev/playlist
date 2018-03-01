@@ -4,75 +4,76 @@
 <p align="center">
   <img width="200"  src="http://danielsiqueira.net/playlist/playlist-logo-completa-peq.png">
 </p>
-Software for video playback and for to share with chromecast.
-Developed with Electron, NodeJS, Javascript and JQuery.
+Um player de vídeo para playlists de filmes e compartilhamento com o Chromecast.
+Desenvolvido com  Electron, NodeJS, Javascript and JQuery.
 
-### Download to MacOs executable here:
+### Download para Macos executable aqui:
 
 
 https://danielsiqueira.net/playlist/macos/Playlist.zip
 
 
-* To run the application on macos, enable the option to allow software from any source. Step by step => <a href="http://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html">Techtudo: Run software outside the apple store</a>
+* Para rodar o aplicativo no macos, habilite a opção que permite programas oriundos de qualquer fonte.Passo a passo => <a href="http://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html">Techtudo: Rodando programas de fora da Apple Store</a>
 
-* Requires network discovery to share the video with the chromecast. Be sure to enable guest mode to make the chromecast public on the network.
+* Requer a descoberta da rede para compartilhar com o chromecast. Lembre-se de habilitar o modo visitante do Chromecast para deixá-lo público na sua rede wifi e poder compartilhar através do PC / Mac / Laptop.
 
-### About video formats and subtitles
+### Sobre os formatos de vídeo e as legendas
 ----------
-The first version support videos mp4 and subtitles srt
-The app convert the subtitles srt in subtitles vtt while load the movie
-To load the correctly subtitle  put the subtitle with same name of the video in same folder
+Nessa primeira versão, são suportados vídeos mp4 e legendas srt.
+O aplicativo converte as legendas srt em vtt enquanto faz o carregamento do vídeo.
+Para carregar as legendas corretamente, lembre-se de que o arquivo de legenda deve ter o mesmo nome do arquivo de vídeo
+e deve estar no mesmo diretório.
 
-### Controls with mouse and keyboard
+### Controles do vídeo com o mouse e o teclado
 ----------
-> On keyboard:
-- v or l => Open display to load videos
-- p or space-bar => Play/pause
-- m => Open menu with playlist of videos
-- u => Change to Mute/ With sound
-- f =>  Enter full screen / Exit full screen
-- q = > Quit App
+> No teclado:
+- v or l => Abre a tela para selecionar os vídeos
+- p or space-bar => Play/Pause
+- m => Abre o menu com a lista de vídeos carregados com as opções para acrescentar mais filmes.
+- u => Alterna entre Mudo e com Áudio
+- f =>  Entra e sai do modo de Tela cheia
+- q = > Fecha o aplicativo
 
-### Instructions
+### Instruções
 ----------
-* Require mdns module native
+* Requer o módulo nativo do mdns
 
-In the root of project..  
-First excute:
-> sudo npm install ( It is necessary to use sudo because NodeJS recompiles node-gyp )
+Na raiz do projeto...
+Primeiro execute:
+> sudo npm install ( É necessário usar o sudo aqui porque o Node faz o rebuild do node-gyp e precisa de permissão de root )
 
-*This will make download from dependecies*
+*Baixa todas as dependências do projeto.*
 ----------
 
-After, execute:
->  sudo npm start
+Depois, execute:
+>  npm start
 
-*Start the electron with the aplication*
+*Inicia a aplicação electron*
 ----------
-### About mdns module( It is a module necessary  to create the communicate with chromecast ):
-In root of project....
-> If you get some error on linux , try:
+### Sobre o módulo mdns( Esse módulo é necessário, porque é utilizado para fazer a comunicação com o chromecast.)
+Na raiz do projeto...
+> Se você não tiver o mdns pode ter alguns erros. Nesse caso, resolva-os assim:
 
-On Linux make the install with:
+No linux, instale o mdns com:
 > sudo npm run ubuntu-mdns && sudo npm run dependecy-ubuntu
 
-If you have problems with permission EACCES make this:
+SE aparecem erros de permissão EACCES, faça isso:
 > sudo npm run permission
 
 
-To Generate Executable: to macos
->  npm run pack-osx ( will generate a executable for macos )
+Para gerar o executável para Macos:
+>  npm run pack-osx
 ----------
 
-To Install: to linux (.deb)
-> npm run pack-linux64 ( will request your password to a permission write )
-> npm run install-deb64 ( will allocate the package in home/$USER/playlist and will create a shortcut on program list and will open the app )
+Para as ditribuições linux (.deb), siga esses passos:
+> npm run pack-linux64 ( Gera o executável e dá permissão de escrita no diretório criado.Sua senha pode ser solicitada. )
+> npm run install-deb64 ( Com executável gerado, faz a criação de diretório na Home do usuário e aloca os arquivos, registrando um atalho na lista de programas instalados )
 ----------
 
-To Generate Executable: to windows
->  npm run pack-win64 ( no test for now - help me test )
+Para gerar o executável para windows:
+>  npm run pack-win64 ( A versão para windows ainda não foi testada. Ajudem-me a testar! )
 ----------
 
-### To contribute with the project, make a fork of it
- Follow this steps( Web site in portuguese ):
+### Para contribuir com o projeto, faça um fork dele
+ Siga esses passos para contribuir:
  https://imasters.com.br/desenvolvimento/como-contribuir-com-um-projeto-no-github/?trace=1519021197&source=single
