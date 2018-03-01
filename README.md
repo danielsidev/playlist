@@ -3,7 +3,8 @@
 <p align="center">
   <img width="200"  src="http://danielsiqueira.net/playlist/playlist-logo-completa-peq.png">
 </p>
-Software Cross Plataform for video playback and for to share with chromecast.
+Software for video playback and for to share with chromecast.
+Developed with Electron, NodeJS, Javascript and JQuery.
 
 ### Download to MacOs executable here:
 
