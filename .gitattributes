@@ -1,2 +1,2 @@
-+*.C linguist-language=NodeJS
-+*.H linguist-language=NodeJS
+*.css linguist-language=NodeJS
+*.js  linguist-language=NodeJS
