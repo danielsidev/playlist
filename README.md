@@ -1,11 +1,12 @@
 
-### Playlist
-----------
-
+<h1 align="center"> Playlist</h1>
+<p align="center">
+  <img width="200"  src="http://danielsiqueira.net/playlist/playlist-logo-completa-peq.png">
+</p>
 Software Cross Plataform for video playback and for to share with chromecast.
 
 ### Download to MacOs executable here:
-----------
+
 
 https://danielsiqueira.net/playlist/macos/Playlist.zip
 
@@ -33,13 +34,13 @@ To load the correctly subtitle  put the subtitle with same name of the video in 
 
 In the root of project..  
 First excute:
-> sudo npm install ( Do not forget the sudo, you need. The node will make rebuild of the node-gyp )
+> sudo npm install
 
 *This will make download from dependecies*
 ----------
 
 After, execute:
->  npm start
+>  sudo npm start
 
 *Start the electron with the aplication*
 ----------
@@ -55,16 +56,18 @@ If you have problems with permission EACCES make this:
 
 
 To Generate Executable: to macos
+> ( on project root )
 >  npm run pack-osx ( will generate a executable for macos )
 ----------
 
 To Install: to linux (.deb)
+> ( on project root )
 > npm run pack-linux64 ( will request your password to a permission write )
-
 > npm run install-deb64 ( will allocate the package in home/$USER/playlist and will create a shortcut on program list and will open the app )
 ----------
 
 To Generate Executable: to windows
+> ( on project root )
 >  npm run pack-win64 ( no test for now - help me test )
 ----------
 
