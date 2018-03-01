@@ -1,4 +1,5 @@
 
+
 <h1 align="center"> Playlist</h1>
 <p align="center">
   <img width="200"  src="http://danielsiqueira.net/playlist/playlist-logo-completa-peq.png">
@@ -10,6 +11,9 @@ Developed with Electron, NodeJS, Javascript and JQuery.
 
 
 https://danielsiqueira.net/playlist/macos/Playlist.zip
+
+
+* To run the application on macos, enable the option to allow software from any source. Step by step => <a href="http://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html">Techtudo: Run software outside the apple store</a>
 
 * Requires network discovery to share the video with the chromecast. Be sure to enable guest mode to make the chromecast public on the network.
 
