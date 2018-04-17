@@ -10,7 +10,7 @@ Desenvolvido com  Electron, NodeJS, Javascript and JQuery.
 ### Download para Macos executable aqui:
 
 
-https://danielsiqueira.net/playlist/macos/Playlist.zip
+http://danielsiqueira.net/playlist/macos/Playlist.zip
 
 
 * Para rodar o aplicativo no macos, habilite a opção que permite programas oriundos de qualquer fonte.Passo a passo => <a href="http://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html">Techtudo: Rodando programas de fora da Apple Store</a>
