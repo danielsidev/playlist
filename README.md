@@ -27,12 +27,12 @@ e deve estar no mesmo diretório.
 ### Controles do vídeo com o mouse e o teclado
 ----------
 > No teclado:
-- v or l => Abre a tela para selecionar os vídeos
-- p or space-bar => Play/Pause
-- m => Abre o menu com a lista de vídeos carregados com as opções para acrescentar mais filmes.
-- u => Alterna entre Mudo e com Áudio
-- f =>  Entra e sai do modo de Tela cheia
-- q = > Fecha o aplicativo
+- ctrl + l => [LOAD] Abre a tela para selecionar os vídeos
+- ctrl + p or ctrl + space-bar => Play/Pause
+- ctrl + m => [MENU] Abre o menu com a lista de vídeos carregados com as opções para acrescentar mais filmes.
+- ctrl + u => [UNSOUND] Alterna entre Mudo e com Áudio
+- ctrl+ f =>  [FULLSCREEN] Entra e sai do modo de Tela cheia
+- ctrl + q => [QUIT] Fecha o aplicativo
 
 ### Instruções
 ----------
