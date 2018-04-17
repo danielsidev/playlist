@@ -106,36 +106,32 @@ $(function(){
 
 });
 $(document).keydown(function(e) {
+let evtobj = window.event? event : e
   const remote = require('electron').remote;
   let janela = remote.getCurrentWindow();
   console.log("Tecla pressionada: "+e.keyCode);
-switch(e.keyCode) {
+  console.log("Tecla CTRL: "+e.ctrlKey);
 
-    case 86:/* v => Abre a janela para escolher o vídeo */
-    case 76:/* l => Abre a janela para escolher o vídeo */
-      $('#videosBtn').click();
-    break;
-    case 80:/* p => play/pause */
-    case 32:/* barra de espaço  => play/pause */
-      $('.icon-play-pause').html($('.icon-play-pause').text() == 'play_arrow' ? 'pause' : 'play_arrow');
-      MediaControls.playVideo();
-      break;
-    case 70: /* f => Fullscreen */
-      MediaControls.setfullScreen();
-      $('.icon-fullscreen').html($('.icon-fullscreen').text() == 'fullscreen' ? 'fullscreen_exit' : 'fullscreen');
-      break;
-    case 81: /* q => Quit => Fehc a janela ( No mac mantém o processo aberto) */
-      janela.close();
-        break;
-    case 77: /* m => Menu = > Abre/Fecha o menu */
-      MediaControls.hoverMenu();
-      break;
-    case 85: /* u => Unvoice ( Mudo ) / Retorna o som */
-      MediaControls.toggleMute();
-      $('.icon-volume').html($('.icon-volume').text() == 'volume_up' ? 'volume_off' : 'volume_up');
-      break;
-
-    default:
-
+  if(evtobj.keyCode==76 && evtobj.ctrlKey){
+    $('#videosBtn').click(); // l => Abre a janela para escolher o vídeo
+  }else if((evtobj.keyCode==80 || evtobj.keyCode==32) && evtobj.ctrlKey){
+    //80 ctrl+p => play/pause
+    //32 ctrl+barra de espaço  => play/pause
+    $('.icon-play-pause').html($('.icon-play-pause').text() == 'play_arrow' ? 'pause' : 'play_arrow');
+    MediaControls.playVideo();
+  }else if((evtobj.keyCode==70) && evtobj.ctrlKey){
+    // ctrl+f => Fullscreen
+    MediaControls.setfullScreen();
+    $('.icon-fullscreen').html($('.icon-fullscreen').text() == 'fullscreen' ? 'fullscreen_exit' : 'fullscreen');
+  }else if((evtobj.keyCode==81) && evtobj.ctrlKey){
+        janela.close(); // q => Quit => Fehc a janela ( No mac mantém o processo aberto)
+  }else if((evtobj.keyCode==77) && evtobj.ctrlKey){
+    // ctrl+m => Menu = > Abre/Fecha o menu
+    MediaControls.hoverMenu();
+  }else if((evtobj.keyCode==85) && evtobj.ctrlKey){
+    // ctrl+u => Unvoice ( Mudo ) / Retorna o som
+    MediaControls.toggleMute();
+    $('.icon-volume').html($('.icon-volume').text() == 'volume_up' ? 'volume_off' : 'volume_up');
   }
+
 });
