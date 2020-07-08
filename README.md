@@ -2,7 +2,7 @@
 
 <h1 align="center"> Playlist</h1>
 <p align="center">
-  <img width="200"  src="http://danielsiqueira.net/playlist/playlist-logo-completa-peq.png">
+  <img width="200"  src="https://github.com/danielsidev/playlist/blob/master/src/assets/images/playlist.png">
 </p>
 Um player de vídeo para playlists de filmes e compartilhamento com o Chromecast.
 Desenvolvido com  Electron, NodeJS, Javascript and JQuery.
